@@ -1,0 +1,10 @@
+.footer-app {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+    padding: 15px 0px;
+    text-align: start;
+}
+   

@@ -1,0 +1,141 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="py-4">
+        <h4>New Task</h4>
+      </div>
+      <div class="form-wrapper my-2">
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Task Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-errormessage="nameError"
+                  required="required"
+                  formControlName="task_name"
+                />
+                <small
+                  class="form-text text-danger"
+                  *ngIf="
+                    f['task_name'].invalid &&
+                    (f['task_name'].touched || f['task_name'].dirty)
+                  "
+                  >Task name is required.</small
+                >
+              </div>
+
+              <div class="form-group pt-3">
+                <label>Task Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-errormessage="nameError"
+                  required="required"
+                  formControlName="description"
+                />
+                <small
+                  class="form-text text-danger"
+                  *ngIf="
+                    f['description'].invalid &&
+                    (f['description'].touched || f['description'].dirty)
+                  "
+                  >Description is required.</small
+                >
+              </div>
+
+              <div class="form-group pt-3">
+                <label>Rewards Points</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  aria-errormessage="nameError"
+                  required="required"
+                  formControlName="points"
+                />
+                <small
+                  class="form-text text-danger"
+                  *ngIf="
+                    f['points'].invalid &&
+                    (f['points'].touched || f['points'].dirty)
+                  "
+                  >Points is required.</small
+                >
+              </div>
+
+              
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Start date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  aria-errormessage="nameError"
+                  required="required"
+                  formControlName="start_date"
+                />
+                <small
+                  class="form-text text-danger"
+                  *ngIf="
+                    f['start_date'].invalid &&
+                    (f['start_date'].touched || f['start_date'].dirty)
+                  "
+                  >Start date is required.</small
+                >
+              </div>
+
+              <div class="form-group pt-3">
+                <label>Due date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  aria-errormessage="nameError"
+                  required="required"
+                  formControlName="due_date"
+                />
+                <small
+                  class="form-text text-danger"
+                  *ngIf="
+                    f['due_date'].invalid &&
+                    (f['due_date'].touched || f['due_date'].dirty)
+                  "
+                  >Due date is required.</small
+                >
+              </div>
+              <div class="form-group pt-3">
+                <label>Priority</label>
+                <input
+                 min="0" max="50"
+                  type="text"
+                  class="form-control"
+                  aria-errormessage="nameError"
+                  required="required"
+                  formControlName="priority"
+                />
+                <small
+                  class="form-text text-danger"
+                  *ngIf="
+                    f['priority'].invalid &&
+                    (f['priority'].touched || f['priority'].dirty)
+                  "
+                  >Priority password is required.</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end py-4">
+            <button class="btn btn-secondary mx-2" (click)="onBtnCancelClick()">
+              Cancel
+            </button>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
