@@ -4,3 +4,4 @@ docker-stack.yml
 .env.secret
 .DS_Store
 node_modules
+.angular
